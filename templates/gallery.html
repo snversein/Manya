@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="bg-primary text-white py-5 text-center">
+    <div class="container">
+        <h1 class="fw-bold">Photo Gallery</h1>
+        <p class="lead">A glimpse into our state-of-the-art facilities.</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Image 1: Building -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="{{ url_for('static', filename='images/gallery-building.png') }}" class="card-img-top"
+                        alt="Manya Diagnostic Center Building" style="height: 250px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <p class="card-text text-muted">Diagnostic Center Exterior</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 2: Reception -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="{{ url_for('static', filename='images/gallery-reception.png') }}" class="card-img-top"
+                        alt="Reception Area" style="height: 250px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <p class="card-text text-muted">Reception & Waiting Area</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 3: MRI Room -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="{{ url_for('static', filename='images/gallery-mri.png') }}" class="card-img-top"
+                        alt="MRI Room" style="height: 250px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <p class="card-text text-muted">Advanced MRI Room</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 4: Laboratory -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="{{ url_for('static', filename='images/gallery-lab.png') }}" class="card-img-top"
+                        alt="Laboratory" style="height: 250px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <p class="card-text text-muted">High-Tech Pathology Lab</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Placeholder for more -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 shadow-sm h-100 bg-light d-flex justify-content-center align-items-center"
+                    style="min-height: 250px;">
+                    <div class="text-center text-muted">
+                        <i class="bi bi-images fs-1"></i>
+                        <p class="mt-2">More photos coming soon...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

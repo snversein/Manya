@@ -1,0 +1,89 @@
+:root {
+    --primary-color: #007bff;
+    /* Medical Blue */
+    --secondary-color: #6c757d;
+    /* Grey */
+    --light-bg: #f8f9fa;
+    --dark-text: #212529;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--dark-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-link {
+    font-weight: 500;
+    margin-right: 10px;
+    color: var(--dark-text) !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.6)), url('../images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+}
+
+/* Cards */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer a:hover {
+    color: white !important;
+}
+
+/* Chat Message Styles */
+.message-sent {
+    background-color: #d1e7dd;
+    /* Light green for sent messages */
+    color: var(--dark-text);
+    align-self: flex-end;
+    /* Note: Flex alignment handled in parent container utility classes */
+}
+
+.message-received {
+    background-color: white;
+    color: var(--dark-text);
+    align-self: flex-start;
+}

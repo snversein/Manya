@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="bg-primary text-white py-5 text-center">
+    <div class="container">
+        <h1 class="fw-bold">Book a Test</h1>
+        <p class="lead">Schedule your diagnostic tests with ease.</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow rounded-3 border-0">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="fw-bold mb-4 text-primary">Appointment Request Form</h3>
+                        <form action="/book-test-submit" method="POST">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="name" required
+                                        placeholder="Enter your full name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" required
+                                        placeholder="Enter your mobile number">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="test" class="form-label">Preferred Test</label>
+                                    <select class="form-select" id="test" required>
+                                        <option value="" selected disabled>Select a test...</option>
+                                        <option value="MRI">MRI Scan</option>
+                                        <option value="CT">CT Scan</option>
+                                        <option value="USG">Ultrasound</option>
+                                        <option value="XRAY">X-Ray</option>
+                                        <option value="BLOOD">Blood Test / Pathology</option>
+                                        <option value="ECG">ECG / Cardiology</option>
+                                        <option value="OTHER">Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="date" class="form-label">Preferred Date</label>
+                                    <input type="date" class="form-control" id="date" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Message / Additional Details
+                                        (Optional)</label>
+                                    <textarea class="form-control" id="message" rows="3"
+                                        placeholder="Tell us more about your requirements"></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit"
+                                        class="btn btn-primary btn-lg w-100 fw-bold rounded-pill">Submit
+                                        Request</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

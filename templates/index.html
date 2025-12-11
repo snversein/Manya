@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section text-center d-flex align-items-center">
+    <div class="container">
+        <h1 class="display-3 fw-bold mb-4">Manya Diagnostic Center</h1>
+        <p class="lead mb-4 fs-4">Advanced Technology. Accurate Results. Compassionate Care.</p>
+        <p class="mb-5">Your trusted partner for comprehensive diagnostic services in Bilaspur.</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="{{ url_for('book_test') }}"
+                class="btn btn-light btn-lg text-primary fw-bold px-4 rounded-pill">Book a Test</a>
+            <a href="{{ url_for('services') }}" class="btn btn-outline-light btn-lg px-4 rounded-pill">Our Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- Introduction Section -->
+<section class="py-5">
+    <div class="container py-4">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="fw-bold text-primary mb-3">Welcome to Manya Diagnostic Center</h2>
+                <p class="text-muted">
+                    At Manya Diagnostic Center, we are committed to providing high-quality diagnostic services with
+                    precision and care.
+                    Equipped with state-of-the-art technology and a team of experienced professionals, we ensure
+                    accurate and timely reports to aid your medical treatment.
+                </p>
+                <p class="text-muted">
+                    Whether it's routine lab tests or advanced imaging, our center in Bilaspur is designed to offer a
+                    comfortable and efficient experience for all patients.
+                </p>
+                <a href="{{ url_for('about') }}" class="btn btn-primary mt-3">Learn More About Us</a>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="{{ url_for('static', filename='images/hero-bg.png') }}" alt="Medical Facility"
+                    class="img-fluid rounded-3 shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Links / Features Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Why Choose Us?</h2>
+            <p class="text-muted">We prioritize your health with our core values</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-3 text-center service-card">
+                    <div class="card-body">
+                        <div class="mb-3 text-primary">
+                            <i class="bi bi-clock-history fs-1"></i>
+                        </div>
+                        <h4 class="card-title fw-bold">Fast Reports</h4>
+                        <p class="card-text text-muted">Get your reports quickly online or at our center without
+                            unnecessary delays.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-3 text-center service-card">
+                    <div class="card-body">
+                        <div class="mb-3 text-primary">
+                            <i class="bi bi-person-check fs-1"></i>
+                        </div>
+                        <h4 class="card-title fw-bold">Expert Staff</h4>
+                        <p class="card-text text-muted">A team of qualified radiologists, pathologists, and technicians
+                            at your service.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-3 text-center service-card">
+                    <div class="card-body">
+                        <div class="mb-3 text-primary">
+                            <i class="bi bi-display fs-1"></i>
+                        </div>
+                        <h4 class="card-title fw-bold">Modern Tech</h4>
+                        <p class="card-text text-muted">Using the latest diagnostic equipment for precise and reliable
+                            results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
