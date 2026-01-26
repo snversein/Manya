@@ -22,9 +22,7 @@ def gallery():
 def book_test():
     return render_template('book-test.html')
 
-@app.route('/reports')
-def reports():
-    return render_template('reports.html')
+
 
 @app.route('/contact')
 def contact():
