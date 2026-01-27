@@ -7,6 +7,39 @@ document.addEventListener('DOMContentLoaded', function () {
         mirror: false
     });
 
+    // Testimonial Slider
+    const testimonialTexts = document.querySelectorAll('.testimonial-text');
+    let currentIndex = 0;
+
+    function showTestimonial(index) {
+        // Remove active class from all and add exit-left to current
+        testimonialTexts.forEach((text, i) => {
+            text.classList.remove('active');
+            if (i === currentIndex) {
+                text.classList.add('exit-left');
+            }
+        });
+        
+        setTimeout(() => {
+            testimonialTexts.forEach((text, i) => {
+                text.classList.remove('exit-left');
+            });
+            testimonialTexts[index].classList.add('active');
+        }, 300);
+    }
+
+    function nextTestimonial() {
+        const nextIndex = (currentIndex + 1) % testimonialTexts.length;
+        showTestimonial(nextIndex);
+        currentIndex = nextIndex;
+    }
+
+    // Initialize first testimonial
+    if (testimonialTexts.length > 0) {
+        showTestimonial(0);
+        setInterval(nextTestimonial, 3000); // Change every 3 seconds
+    }
+
     // Sticky Navbar Logic
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {

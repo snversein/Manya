@@ -167,6 +167,35 @@ main {
     overflow: hidden;
 }
 
+/* Testimonial Slider */
+.testimonial-slider {
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.6s ease-in-out;
+    margin: 0;
+    color: black !important;
+    font-weight: bold;
+}
+
+.testimonial-text.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.testimonial-text.exit-left {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
 .hero-section::before {
     content: '';
     position: absolute;
