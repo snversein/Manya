@@ -18,7 +18,7 @@
     <!-- Hero Content -->
     <div class="hero-content">
         <div class="container">
-            <div class="row align-items-center min-vh-100">
+            <div class="row align-items-center" style="min-height: 100vh;">
                 <div class="col-lg-6">
                     <!-- NABH Badge -->
                     <div class="nabh-badge mb-4" data-aos="fade-down">
@@ -42,34 +42,24 @@
                     <!-- Key Features -->
                     <div class="hero-features" data-aos="fade-up" data-aos-delay="300">
                         <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="bi bi-award-fill"></i>
-                            </div>
-                            <span>First diagnostic in Chhattisgarh to get NABH accreditation</span>
+                            
+                            <span>FIRST DIAGNOSTIC IN CHHATTISGARH TO GET NABH ACCREDITATION</span>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="bi bi-heart-pulse-fill"></i>
-                            </div>
-                            <span>First and only diagnostic to start non-invasive CT Coronary Angiography in Bilaspur and Sarguja District</span>
+                           
+                            <span>FIRST AND ONLY DIAGNOSTIC TO START NON-INVASIVE CT CORONARY ANGIOGRAPHY IN BILASPUR AND SARGUJA DISTRICT</span>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="bi bi-heart-pulse-fill"></i>
-                            </div>
-                            <span>Expertise and Focus on complex carcinoma cases</span>
+                            
+                            <span>EXPERTISE AND FOCUS ON COMPLEX CARCINOMA CASES</span>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="bi bi-shield-fill-check"></i>
-                            </div>
-                            <span>Adult and paediatric cardiac imaging on CT/MRI</span>
+                           
+                            <span>FIRST AND ONLY DIAGNOSTIC TO START NON-INVANSIVE CT CORONARY ANGIOGRAPHY IN BILASPUR AND SARGUJA DISTRICT</span>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="bi bi-shield-fill-check"></i>
-                            </div>
-                            <span>20+ Years of Excellence</span>
+                            
+                            <span>20+ YEARS OF EXCELLENCE</span>
                         </div>
                     </div>
                     
@@ -87,26 +77,73 @@
                 </div>
                 
                 <div class="col-lg-6">
-                    <!-- Hero Visual -->
-                    <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
-                        <div class="visual-card">
-                            <div class="card-image">
-                                <img src="{{ url_for('static', filename='images/manya.jpg') }}" alt="Manya Diagnostic Center" class="main-image">
-                                <div class="image-overlay"></div>
+                    <!-- Medical Imaging Showcase -->
+                    <div class="medical-showcase" data-aos="fade-left" data-aos-delay="200">
+                        <!-- 3D Body Scanner Animation -->
+                        <div class="body-scanner">
+                            <div class="scanner-container">
+                                <div class="human-silhouette">
+                                    <div class="scanning-line"></div>
+                                    <div class="scan-point scan-1"></div>
+                                    <div class="scan-point scan-2"></div>
+                                    <div class="scan-point scan-3"></div>
+                                </div>
+                                <div class="scanner-ring"></div>
                             </div>
-                            <div class="floating-cards">
-                                <div class="float-card card-1">
-                                    <i class="bi bi-hospital"></i>
-                                    <span>Advanced Technology</span>
+                        </div>
+                        
+                        <!-- Imaging Services Grid -->
+                        <div class="imaging-services">
+                            <div class="service-card" data-service="ct">
+                                <div class="service-icon">
+                                    <i class="bi bi-layers"></i>
                                 </div>
-                                <div class="float-card card-2">
-                                    <i class="bi bi-people-fill"></i>
-                                    <span>Expert Doctors</span>
+                                <h4>CT Scan</h4>
+                                <p>Advanced 3D Imaging</p>
+                                <div class="service-glow"></div>
+                            </div>
+                            
+                            <div class="service-card" data-service="mri">
+                                <div class="service-icon">
+                                    <i class="bi bi-magnet"></i>
                                 </div>
-                                <div class="float-card card-3">
-                                    <i class="bi bi-clock-fill"></i>
-                                    <span>Quick Reports</span>
+                                <h4>MRI</h4>
+                                <p>High-Resolution Scans</p>
+                                <div class="service-glow"></div>
+                            </div>
+                            
+                            <div class="service-card" data-service="xray">
+                                <div class="service-icon">
+                                    <i class="bi bi-radiation"></i>
                                 </div>
+                                <h4>X-Ray</h4>
+                                <p>Digital Radiography</p>
+                                <div class="service-glow"></div>
+                            </div>
+                            
+                            <div class="service-card" data-service="ultrasound">
+                                <div class="service-icon">
+                                    <i class="bi bi-heart-pulse"></i>
+                                </div>
+                                <h4>Ultrasound</h4>
+                                <p>Real-Time Imaging</p>
+                                <div class="service-glow"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Technology Features -->
+                        <div class="tech-features">
+                            <div class="tech-feature">
+                                <i class="bi bi-shield-check"></i>
+                                <span>NABH Accredited</span>
+                            </div>
+                            <div class="tech-feature">
+                                <i class="bi bi-cpu"></i>
+                                <span>Advanced Technology</span>
+                            </div>
+                            <div class="tech-feature">
+                                <i class="bi bi-award"></i>
+                                <span>Expert Radiologists</span>
                             </div>
                         </div>
                     </div>
@@ -177,7 +214,7 @@
             </div>
             <div class="col-lg-6 text-center" data-aos="fade-left" >
                 <img src="{{ url_for('static', filename='images/cer.png') }}" alt="Medical Facility"
-                    class="img-fluid rounded-4 shadow-lg border border-3 border-dark" >
+                    class="img-fluid rounded-4 shadow-lg" >
             </div>
         </div>
     </div>

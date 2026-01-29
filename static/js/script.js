@@ -38,15 +38,56 @@ document.addEventListener('DOMContentLoaded', function () {
             }, (index * 200) + 800);
         });
 
-        // Scroll indicator behavior
-        const scrollIndicator = document.querySelector('.scroll-indicator');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                scrollIndicator.classList.add('hidden');
-            } else {
-                scrollIndicator.classList.remove('hidden');
-            }
-        });
+        // Medical Showcase Interactions
+        const medicalShowcase = document.querySelector('.medical-showcase');
+        if (medicalShowcase) {
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            // Add hover effects for service cards
+            serviceCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.service-icon');
+                    icon.style.transform = 'scale(1.1) rotate(5deg)';
+                    icon.style.transition = 'transform 0.3s ease';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.service-icon');
+                    icon.style.transform = 'scale(1) rotate(0deg)';
+                });
+                
+                // Click interaction for service cards
+                card.addEventListener('click', function() {
+                    const service = this.getAttribute('data-service');
+                    
+                    // Highlight animation
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                    
+                    // Flash scanner ring
+                    const scannerRing = document.querySelector('.scanner-ring');
+                    if (scannerRing) {
+                        scannerRing.style.animation = 'none';
+                        setTimeout(() => {
+                            scannerRing.style.animation = 'ringPulse 3s ease-in-out infinite';
+                        }, 10);
+                    }
+                });
+            });
+
+            // Auto-rotate through services
+            let currentService = 0;
+            setInterval(() => {
+                serviceCards.forEach(card => card.style.transform = '');
+                serviceCards[currentService].style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    serviceCards[currentService].style.transform = '';
+                }, 2000);
+                currentService = (currentService + 1) % serviceCards.length;
+            }, 4000);
+        }
     }
 
     // Testimonial Slider
@@ -147,72 +188,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
-
-    // Achievement Animation Observer
-    const achievementItems = document.querySelectorAll('.achievement-item');
-    
-    if (achievementItems.length > 0) {
-        const achievementObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const item = entry.target;
-                    const achievementNum = item.getAttribute('data-achievement');
-                    
-                    setTimeout(() => {
-                        item.classList.add('active');
-                        
-                        // Add a special effect for the first achievement
-                        if (achievementNum === '1') {
-                            item.style.animation = 'pulse 1s ease-out';
-                            setTimeout(() => {
-                                item.style.animation = '';
-                            }, 1000);
-                        }
-                    }, (achievementNum - 1) * 200);
-                    
-                    observer.unobserve(item);
-                }
-            });
-        }, { 
-            threshold: 0.2,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        achievementItems.forEach(item => {
-            achievementObserver.observe(item);
-        });
-
-        // Interactive hover effects
-        achievementItems.forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-15px) rotateX(5deg) scale(1.08)';
-                this.querySelector('.achievement-icon').style.animation = 'pulse 0.8s infinite';
-            });
-
-            item.addEventListener('mouseleave', function() {
-                this.style.transform = '';
-                this.querySelector('.achievement-icon').style.animation = 'pulse 2s infinite';
-            });
-
-            // Add click interaction
-            item.addEventListener('click', function() {
-                const label = this.querySelector('.achievement-label');
-                const originalText = label.textContent;
-                
-                // Create a brief highlight effect
-                label.style.color = '#ffffff';
-                label.style.transform = 'scale(1.2)';
-                label.style.transition = 'all 0.3s ease';
-                
-                setTimeout(() => {
-                    label.style.color = '';
-                    label.style.transform = '';
-                }, 300);
-            });
-        });
-    }
-
-    
 
     // Form Submission Handling for Book Test
     const bookTestForm = document.querySelector('form[action="/book-test-submit"]'); // Placeholder selector
