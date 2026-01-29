@@ -358,7 +358,7 @@ main {
     left: -3px;
     right: -3px;
     bottom: -3px;
-    background: conic-gradient(from 0deg, transparent, rgba(16, 185, 129, 0.4), rgba(16, 185, 129, 0.6), rgba(16, 185, 129, 0.4), transparent);
+    
     border-radius: 15px;
     z-index: -1;
     animation: movingBorder 2s linear infinite;
